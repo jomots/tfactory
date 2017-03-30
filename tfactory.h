@@ -33,22 +33,14 @@ public:
 	template <typename DerivedClass, typename ... ArgTypes>
 	static void registerClass(KeyType key,ArgTypes&& ... args)
 	{
-		//args are captured by value.Reason: no guarantee that referenced variable
-		//will stay alive at instantiation moment.
 		registeredClasses[key]= [args ...]() {return std::make_unique<DerivedClass>(args ...);};
 	}
-	/**
-	* Checks if key was already used for class constructor registration.
-	* @key - to look for.
-	*/
+	
 	static bool isRegistered(KeyType key)
 	{
 		 return   registeredClasses.find(key)!=std::end(registeredClasses);
 	}
-	/**
-	* Returns unique_ptr to class instance. 
-	* @key -  to look for class constructor.
-	*/
+	
 	static std::unique_ptr<BaseClass> getInstance(KeyType key)
 	{
 		if( !isRegistered(key)) throw std::out_of_range("TFactory: Key not found.");
