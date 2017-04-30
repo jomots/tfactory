@@ -7,8 +7,6 @@
 #include <iostream>
 #include <string>
 
-
-
 class Base
 {
 public:
@@ -24,30 +22,25 @@ private:
 	int num;
 };
 
-
 class Derived2:public Base{
 public:	
 	Derived2(std::string str="Lone Starr"):str(str){}
 	void doSomething() override {std::cout<<"str="<<str<<"\n";}
 private:	
 	std::string str;
-
 };
-
 
 class Unattached{
 public:
 	void doSomething()  {std::cout<<"i'm unattached\n";}
 };
 
+int main() {
 
-int main()
-{
 	std::string allstars {"Barf"};
 	int number=256;
 
 	TFactory<std::string,Base> testFactory;
-	
 	
 	//With default constructors
 	testFactory.registerClass<Derived1>("Derived1Default");
