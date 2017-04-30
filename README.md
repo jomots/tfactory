@@ -1,5 +1,5 @@
 # tfactory
-  Extremely simple templated factory. It's contained in single tiny header file. Allowes to register factory classes with or without parameters.
+  Extremely simple C++14 templated factory. It's contained in single tiny header file. Allowes to register factory classes with or without parameters.
   Usage example:
 ```c++
 #include "tfactory.h"
@@ -42,11 +42,11 @@ int main() {
 
 	TFactory<std::string,Base> testFactory;
 	
-	//With default constructors
+	//Add default class constructors
 	testFactory.registerClass<Derived1>("Derived1Default");
 	testFactory.registerClass<Derived2>("Derived2Default");
 	
-	//With some initial params
+	//Add class sonstructors with some initial params
 	testFactory.registerClass<Derived1>("Derived1Param",number);	
 	testFactory.registerClass<Derived2>("Derived2Param", allstars);
 	
