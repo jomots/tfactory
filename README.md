@@ -46,7 +46,7 @@ int main() {
 	testFactory.registerClass<Derived1>("Derived1Default");
 	testFactory.registerClass<Derived2>("Derived2Default");
 	
-	//Add class sonstructors with some initial params
+	//Add class constructors with some initial params
 	testFactory.registerClass<Derived1>("Derived1Param",number);	
 	testFactory.registerClass<Derived2>("Derived2Param", allstars);
 	
