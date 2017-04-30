@@ -1,8 +1,8 @@
 # tfactory
   Extremely simple templated factory. It's contained in single tiny header file. Allowes to register factory classes with or without parameters.
   Usage example:
-  ```c++
-  #include "tfactory.h"
+```c++
+#include "tfactory.h"
 
 #include <iostream>
 #include <string>
@@ -83,4 +83,4 @@ int main()
 	}
 
 }
-  ```
+```
